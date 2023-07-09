@@ -1,0 +1,15 @@
+#!/bin/bash
+export TMPDIR=/home/vsoftware/apps/ascension/tmp
+mkdir -p /home/vsoftware/apps/ascension/tmp
+PIDFILE="/home/vsoftware/apps/ascension/tmp/node.pid"
+NODE=/home/vsoftware/apps/ascension/node/bin/node
+
+if [ -e "$PIDFILE" ] && (pgrep -u vsoftware | grep -x -f $PIDFILE &> /dev/null); then
+  echo "Node.js for ascension already running."
+  exit 99
+fi
+
+cd /home/vsoftware/apps/ascension
+/usr/sbin/daemonize -c /home/vsoftware/apps/ascension -e ~/logs/apps/ascension/node_error.log -o ~/logs/apps/ascension/node_output.log -p $PIDFILE $NODE bin/www
+
+echo "Started Node.js for ascension."

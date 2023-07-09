@@ -1,0 +1,118 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="<%=ref_id%>">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" >
+<link rel="stylesheet" href="https://alxproject.virilesoftware.com/css/receiptpos.css" >
+<style>
+.card_total{
+		background-color: rgba(172,172,213,0.722);
+		stroke: rgba(112,112,112,1);
+		stroke-width: 1px;
+		stroke-linejoin: miter;
+		stroke-linecap: butt;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+		padding:10px 5px;
+		
+}
+#Total_Amount_ {
+		
+		width: 125px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Segoe UI;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 20px;
+		color:#000000;
+	}
+	#n_0000_p {
+		
+		width: 59px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Segoe UI;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 20px;
+		color:#000000;
+	}
+	</style>
+</head>
+
+<body id="<%=ref_id%>">
+
+
+  <div id="invoice-POS">
+   <center id="top">
+      <% if (school_picture) { %>
+	  <div class="logo"><img src="<%=school_picture%>"/></div>
+	<% } %>
+      <div class="info"> 
+        <h2 id="company"><%=school_name%></h2>
+        <h4 style="margin:5px;"></h4>
+        <h6 id="phone"><%=phone%></h6>
+      </div><!--End Info-->
+    </center><!--End InvoiceTop-->
+	
+    
+    
+    
+    <center id="rep">
+    <h5 id="receipt_info"></h5>
+    </center>
+    
+    <div id="mid">
+      <div class="info">
+      <h5>INV <span id="invoice_no"></span> <span id="receipt_date"></span></h5>
+	  <h4 style="margin: 4px 0px;">Name : <span id="student_name"></span> </h4>
+	  <h5 style="margin: 4px 0px;">Class : <span id="student_class"></span> </h5>
+	  <h6 id="session" style="text-align:center"></h6>
+      </div>
+	  </div><!--End Invoice Mid-->
+    <h4 id="session" style="margin: 4px 0px;text-align:right">Fees Balance: <span id="fees_balance"></span></h4>
+    
+    <div id="bot">
+	
+	
+	</div>
+	<div class="row card_total">
+	</div>
+	
+		
+	
+	 
+	
+				
+					
+					<div id="legalcopy">
+						<p class="legal"><strong>POWERED BY VIRILE SOFTWARE</strong></p>
+					</div>
+
+				</div><!--End InvoiceBot-->
+				
+  </div><!--End Invoice-->
+  
+
+<div class="printbtn">
+<a class="btn-success myButton" href="https://alxproject.virilesoftware.com/eportal/<%=username%>/studentbillinvoice/<%=ref_id%>">Back</a>
+
+</div>
+<script src="https://alxproject.virilesoftware.com/js/jquery.min.js"></script>
+<script src="https://alxproject.virilesoftware.com/js/jquery.storageapi.js"></script>
+	<script src="https://alxproject.virilesoftware.com/js/jwt-decode.min.js"></script>
+	<script src="https://alxproject.virilesoftware.com/lib/moment/moment.min.js"></script>
+<script type="text/javascript" src="https://alxproject.virilesoftware.com/js/auth.js"></script>
+<script>
+var token = auth.getToken()
+if(token == null)
+{
+window.location = "https://alxproject.virilesoftware.com/eportal/login"
+}
+</script>
+<script src="https://alxproject.virilesoftware.com/js/receipt.js"></script>
+
+</body>
+</html>

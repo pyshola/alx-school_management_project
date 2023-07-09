@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head id="<%=ref_id%>">
+    <title><%=school%> - Syntax School Management Software</title>
+    <!-- HTML5 Shim and Respond.js IE9 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+      <![endif]-->
+      <!-- Meta -->
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+      <meta name="description" content="School Management Software">
+        <meta name="author" content="Syntax School Management Software">
+      
+      <!-- Favicon icon -->
+      <link rel="icon" href="https://alxproject.virilesoftware.com/images/favicon.ico" type="image/x-icon">
+      <!-- Google font-->
+      <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
+      <!-- themify icon -->
+      <link rel="stylesheet" type="text/css" href="https://alxproject.virilesoftware.com/icon/themify-icons/themify-icons.css">
+      <!-- ico font -->
+      <!-- ico font -->
+      <link rel="stylesheet" type="text/css" href="https://alxproject.virilesoftware.com/icon/icofont/css/icofont.css">
+      <link href="https://alxproject.virilesoftware.com/lib/font-awesome/css/font-awesome.css" rel="stylesheet">
+    <link href="https://alxproject.virilesoftware.com/lib/Ionicons/css/ionicons.css" rel="stylesheet">
+      <!-- Style.css -->
+      <link rel="stylesheet" type="text/css" href="https://alxproject.virilesoftware.com/lib/bootstrap/dist/css/bootstrap.min.css">
+      <link rel="stylesheet" type="text/css" href="https://alxproject.virilesoftware.com/css/menu.css">
+      <link rel="stylesheet" href="https://alxproject.virilesoftware.com/lib/datatables.net-bs4/css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" href="https://alxproject.virilesoftware.com/lib/data-table/css/buttons.dataTables.min.css">
+    <link rel="stylesheet" href="https://alxproject.virilesoftware.com/lib/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css">
+      <link href="https://alxproject.virilesoftware.com/css/select2.min.css" rel="stylesheet">
+      <link rel="stylesheet" type="text/css" href="https://alxproject.virilesoftware.com/css/slim.css">
+      <link href="https://alxproject.virilesoftware.com/dist/css/semantic-ui/tabulator_semantic-ui.min.css" rel="stylesheet">
+      <link rel="stylesheet" type="text/css" href="https://alxproject.virilesoftware.com/css/jquery.mCustomScrollbar.css">
+      <style>
+.tabulator .tabulator-header, .tabulator .tabulator-header .tabulator-col {
+    border: solid 1px;
+}
+.tabulator-row .tabulator-cell {
+    border: solid 1px;
+}
+.tabulator .tabulator-tableHolder{
+border: solid 1px;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  padding: 12px 16px;
+  z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/*
+ CSS for the main interaction
+*/
+.tabset > input[type="radio"] {
+  position: absolute;
+  left: -200vw;
+}
+
+.tabset .tab-panel {
+  display: none;
+}
+
+.tabset > input:first-child:checked ~ .tab-panels > .tab-panel:first-child,
+.tabset > input:nth-child(3):checked ~ .tab-panels > .tab-panel:nth-child(2),
+.tabset > input:nth-child(5):checked ~ .tab-panels > .tab-panel:nth-child(3),
+.tabset > input:nth-child(7):checked ~ .tab-panels > .tab-panel:nth-child(4),
+.tabset > input:nth-child(9):checked ~ .tab-panels > .tab-panel:nth-child(5),
+.tabset > input:nth-child(11):checked ~ .tab-panels > .tab-panel:nth-child(6) {
+  display: block;
+}
+
+/*
+ Styling
+*/
+
+
+.tabset > label {
+  position: relative;
+  display: inline-block;
+  padding: 15px 15px 25px;
+  border: 1px solid transparent;
+  border-bottom: 0;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.tabset > label::after {
+  content: "";
+  position: absolute;
+  left: 15px;
+  bottom: 10px;
+  width: 22px;
+  height: 4px;
+  background: #8d8d8d;
+}
+
+.tabset > label:hover,
+.tabset > input:focus + label {
+  color: #06c;
+}
+
+.tabset > label:hover::after,
+.tabset > input:focus + label::after,
+.tabset > input:checked + label::after {
+  background: #06c;
+}
+
+.tabset > input:checked + label {
+  border-color: #ccc;
+  border-bottom: 1px solid #fff;
+  margin-bottom: -1px;
+}
+
+.tab-panel {
+  padding: 30px 0;
+  border-top: 1px solid #ccc;
+}
+
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+
+</style>
+  </head>
+
+  <body>
+    <!-- Pre-loader start -->
+    <div class="theme-loader">
+        <div class="ball-scale">
+            <div></div>
+        </div>
+    </div>
+    <!-- Pre-loader end -->
+    <!-- Menu header start -->
+    <div id="pcoded" class="pcoded">
+        <div class="pcoded-overlay-box"></div>
+        <div class="pcoded-container navbar-wrapper">
+
+            <nav class="navbar header-navbar pcoded-header" header-theme="theme4">
+                <div class="navbar-wrapper">
+                    <div class="navbar-logo">
+                        <a class="mobile-menu" id="mobile-collapse" href="#!">
+                            <i class="ti-menu"></i>
+                        </a>
+                        <a class="mobile-search morphsearch-search" href="#">
+                            <i class="ti-search"></i>
+                        </a>
+                        <a href="https://alxproject.virilesoftware.com/eportal">
+                            <img class="img-fluid" src="https://alxproject.virilesoftware.com/images/logo.png" alt="Theme-Logo" />
+                        </a>
+                        <a class="mobile-options">
+                            <i class="ti-more"></i>
+                        </a>
+                    </div>
+                    <div class="navbar-container container-fluid">
+                        <div>
+                            <ul class="nav-left">
+                                <li>
+                                    <div class="sidebar_toggle"><a href="javascript:void(0)"><i class="ti-menu"></i></a></div>
+                                </li>
+                               
+                                <li>
+                                    <a href="#!" onclick="javascript:toggleFullScreen()">
+                                        <i class="ti-fullscreen"></i>
+                                    </a>
+                                </li>
+                                
+                            </ul>
+                            <ul class="nav-right">
+                               
+                                <li class="header-notification d-none">
+                                    <a href="#!">
+                                        <i class="ti-bell"></i>
+                                        <span class="badge">5</span>
+                                    </a>
+                                    <ul class="show-notification">
+                                        <li>
+                                            <h6>Notifications</h6>
+                                            <label class="label label-danger">New</label>
+                                        </li>
+                                        <li>
+                                            <div class="media">
+                                                <img class="d-flex align-self-center" src="https://alxproject.virilesoftware.com/images/user.png" alt="Generic placeholder image">
+                                                <div class="media-body">
+                                                    <h5 class="notification-user">John Doe</h5>
+                                                    <p class="notification-msg">Lorem ipsum dolor sit amet, consectetuer elit.</p>
+                                                    <span class="notification-time">30 minutes ago</span>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="media">
+                                                <img class="d-flex align-self-center" src="https://alxproject.virilesoftware.com/images/user.png" alt="Generic placeholder image">
+                                                <div class="media-body">
+                                                    <h5 class="notification-user">Joseph William</h5>
+                                                    <p class="notification-msg">Lorem ipsum dolor sit amet, consectetuer elit.</p>
+                                                    <span class="notification-time">30 minutes ago</span>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="media">
+                                                <img class="d-flex align-self-center" src="https://alxproject.virilesoftware.com/images/user.png" alt="Generic placeholder image">
+                                                <div class="media-body">
+                                                    <h5 class="notification-user">Sara Soudein</h5>
+                                                    <p class="notification-msg">Lorem ipsum dolor sit amet, consectetuer elit.</p>
+                                                    <span class="notification-time">30 minutes ago</span>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </li>
+                                
+                                <li class="user-profile header-notification">
+                                    <a href="#!">
+                                        <img src="<%=picture%>" alt="User-Profile-Image">
+                                        <span><%=name%></span>
+                                        <i class="ti-angle-down"></i>
+                                    </a>
+                                    <ul class="show-notification profile-notification">
+                                       <li>
+                                            <a href="https://alxproject.virilesoftware.com/eportal">
+                                                <i class="ti-email"></i> My Messages
+                                            </a>
+                                        </li>
+                                        
+                                        <li>
+                                            <a href="#!">
+                                                <i class="ti-layout-sidebar-left"></i> Logout
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                            
+                        </div>
+                    </div>
+                </div>
+            </nav>
+
+            
+            
+            <div class="pcoded-main-container">
+                <div class="pcoded-wrapper">
+                    <nav class="pcoded-navbar" pcoded-header-position="relative">
+                        <div class="sidebar_toggle"><a href="#"><i class="icon-close icons"></i></a></div>
+                        <div class="pcoded-inner-navbar main-menu">
+                            <div class="">
+                                <div class="main-menu-header">
+                                    <img class="img-40" src="<%=school_picture%>" alt="User-Profile-Image">
+                                    <div class="user-details">
+                                        <span><%=name%></span>
+                                        <span id="more-details"><%=position%></span>
+                                    </div>
+                                </div>
+
+                                <div class="main-menu-content">
+                                    
+                                </div>
+                            </div>
+                            <div class="pcoded-navigatio-lavel" data-i18n="nav.category.forms" menu-title-theme="theme5">NAVIGATION</div>
+                            <ul class="pcoded-item pcoded-left-item" id="side-menu">
+                                
+                            </ul>
+                            
+                            
+                            
+                        </div>
+                    </nav>
+                    <div class="pcoded-content">
+                        <div class="pcoded-inner-content">
+                                <div class="container">
+                                <div class="slim-pageheader">
+                                  <ol class="breadcrumb slim-breadcrumb">
+                                    <li class="breadcrumb-item"><a href="#">Academic</a></li>
+                                    <li class="breadcrumb-item"><a href="#">Subject</a></li>
+                                    <li class="breadcrumb-item active" aria-current="page"><%=subject%></li>
+                                  </ol>
+                                  <h6 class="slim-pagetitle"><%=subject%></h6>
+                                </div><!-- slim-pageheader -->
+                    
+                        <div class="section-wrapper mg-t-20">
+          <div class="row">
+          <div class="col-lg-12  col-sm-12 col-xs-12">
+          <div class="card-body" id="biodata">
+                
+              </div><!-- card-body -->
+              </div>
+          
+          </div>
+          <div class="row">
+            <div class="col-md">
+              <div class="card">
+               
+                <div class="card-header bg-dark">
+                  <ul class="nav nav-tabs nav-tabs-for-dark card-header-tabs">
+                    <li class="nav-item">
+                      <a class="nav-link active" href="#student_list" data-toggle="tab">Student</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#attendance" data-toggle="tab">Assessment</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#scoresheet" data-toggle="tab">Score Sheet</a>
+                    </li>
+                   
+                  </ul>
+                </div><!-- card-header -->
+                <div class="card-body">
+                  <div class="tab-content">
+                    <div class="tab-pane active" id="student_list">
+                    
+                    <div class="table-responsive">
+                      <table class="table table-bordered mg-b-0 tx-14"  id="tabledata">
+                      <thead class="thead-colored  bg-success">
+                    <tr> <th>S/N</th><th>Name</th><th>Admission No</th><th>Class</th><th>Gender</th><th>Admission Date</th></tr></thead>
+                        <tbody  id="tablebodys">
+                          
+                        </tbody>
+                      </table>
+                    </div><!-- table-responsive -->
+                    </div>
+                    
+                    <div class="tab-pane" id="attendance">
+                    
+                    <div class="card card-table">
+                      <div class="table-responsive">
+                      <table class="table mg-b-0 tx-12"  id="sssdata">
+                        <tbody  id="sssbody">
+                          
+                        </tbody>
+                      </table>
+                    </div><!-- table-responsive -->
+                    </div>
+                    </div><!-- tab-pane -->
+                    
+                    <div class="tab-pane" id="scoresheet">
+                    
+                    
+                      
+                      <div class="tabset">
+                      <!-- Tab 1 -->
+                      <input type="radio" name="tabset" id="tab1" aria-controls="first_term" checked>
+                      <label for="tab1">First Term</label>
+                      <!-- Tab 2 -->
+                      <input type="radio" name="tabset" id="tab2" aria-controls="second_term">
+                      <label for="tab2">Second Term</label>
+                      <!-- Tab 3 -->
+                      <input type="radio" name="tabset" id="tab3" aria-controls="third_term">
+                      <label for="tab3">Third Term</label>
+                      
+                      <div class="tab-panels">
+                        <section id="first_term" class="tab-panel">
+                        <div class="table-responsive">
+                          <div id="first_term_table" style="min-width:420px">
+                          </div>
+                          <div class="mg-t-10">
+                            <button class="btn btn-primary" type="submit" id="first-processtransaction">Save</button>
+                            <a class="btn btn btn-success disabled d-none" href="javascript:;" id="first-processing-btn"> Processing</a>
+                            </div>
+                        </div><!-- table-responsive -->
+                        </section>
+                        <section id="second_term" class="tab-panel">
+                        <div class="table-responsive">
+                          <div id="second_term_table" style="min-width:420px">
+                          </div>
+                          <div class="mg-t-10">
+                            <button class="btn btn-primary" type="submit" id="second-processtransaction">Save</button>
+                            <a class="btn btn btn-success disabled d-none" href="javascript:;" id="second-processing-btn"> Processing</a>
+                            </div>
+                        </div><!-- table-responsive -->
+                        </section>
+                        <section id="third_term" class="tab-panel">
+                        <div class="table-responsive">
+                          <div id="third_term_table" style="min-width:420px">
+                          </div>
+                          <div class="mg-t-10">
+                            <button class="btn btn-primary" type="submit" id="third-processtransaction">Save</button>
+                            <a class="btn btn btn-success disabled d-none" href="javascript:;" id="third-processing-btn"> Processing</a>
+                            </div>
+                        </div><!-- table-responsive -->
+                        </section>
+                      
+                    
+                      
+                      </div>
+                    </div><!-- table-responsive -->
+                    </div>
+                    </div><!-- tab-pane -->
+                    
+                    
+                  </div><!-- tab-content -->
+                </div><!-- card-body -->
+              </div><!-- card -->
+            </div><!-- col -->
+            
+          </div><!-- row -->
+        </div><!-- section-wrapper -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    
+    
+   
+    
+<!-- Older IE warning message -->
+    <!--[if lt IE 9]>
+<div class="ie-warning">
+    <h1>Warning!!</h1>
+    <p>You are using an outdated version of Internet Explorer, please upgrade <br/>to any of the following web browsers to access this website.</p>
+    <div class="iew-container">
+        <ul class="iew-download">
+            <li>
+                <a href="http://www.google.com/chrome/">
+                    <img src="https://alxproject.virilesoftware.com/images/browser/chrome.png" alt="Chrome">
+                    <div>Chrome</div>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.mozilla.org/en-US/firefox/new/">
+                    <img src="https://alxproject.virilesoftware.com/images/browser/firefox.png" alt="Firefox">
+                    <div>Firefox</div>
+                </a>
+            </li>
+            <li>
+                <a href="http://www.opera.com">
+                    <img src="https://alxproject.virilesoftware.com/images/browser/opera.png" alt="Opera">
+                    <div>Opera</div>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.apple.com/safari/">
+                    <img src="https://alxproject.virilesoftware.com/images/browser/safari.png" alt="Safari">
+                    <div>Safari</div>
+                </a>
+            </li>
+            <li>
+                <a href="http://windows.microsoft.com/en-us/internet-explorer/download-ie">
+                    <img src="https://alxproject.virilesoftware.com/images/browser/ie.png" alt="">
+                    <div>IE (9 & above)</div>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <p>Sorry for the inconvenience!</p>
+</div>
+<![endif]-->
+<!-- Warning Section Ends -->
+<!-- Required Jqurey -->
+<script type="text/javascript" src="https://alxproject.virilesoftware.com/js/jquery.min.js"></script>
+<script src="https://alxproject.virilesoftware.com/js/jquery-ui.min.js"></script>
+<script type="text/javascript" src="https://alxproject.virilesoftware.com/lib/bootstrap/js/bootstrap.js"></script>
+<script type="text/javascript" src="https://alxproject.virilesoftware.com/lib/tether/dist/js/tether.min.js"></script>
+<script type="text/javascript" src="https://alxproject.virilesoftware.com/lib/bootstrap/dist/js/bootstrap.min.js"></script>
+<!-- jquery slimscroll js -->
+<script type="text/javascript" src="https://alxproject.virilesoftware.com/lib/jquery-slimscroll/jquery.slimscroll.js"></script>
+<!-- modernizr js -->
+<script type="text/javascript" src="https://alxproject.virilesoftware.com/lib/modernizr/modernizr.js"></script>
+<script type="text/javascript" src="https://alxproject.virilesoftware.com/lib/modernizr/feature-detects/css-scrollbars.js"></script>
+<!-- classie js -->
+<script type="text/javascript" src="https://alxproject.virilesoftware.com/lib/classie/classie.js"></script>
+
+<script type="text/javascript" src="https://alxproject.virilesoftware.com/js/jquery.storageapi.js"></script>
+<script type="text/javascript" src="https://alxproject.virilesoftware.com/js/jwt-decode.min.js"></script>
+<script type="text/javascript" src="https://alxproject.virilesoftware.com/js/auth.js"></script>
+<script src="https://alxproject.virilesoftware.com/js/jquery.validate.min.js"></script>
+<script type="text/javascript" src="https://alxproject.virilesoftware.com/lib/form-validation/validate.js"></script>
+    <script src="https://alxproject.virilesoftware.com/lib/sweetalert/sweetalert.min.js"></script>
+    <script src="https://alxproject.virilesoftware.com/lib/datatables.net/js/jquery.dataTables.min.js"></script>
+	<script src="https://alxproject.virilesoftware.com/lib/datatables.net-bs4/dataTables.bootstrap4.js"></script>
+    <script src="https://alxproject.virilesoftware.com/lib/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
+    <script src="https://alxproject.virilesoftware.com/lib/data-table/js/jszip.min.js"></script>
+    <script src="https://alxproject.virilesoftware.com/lib/data-table/js/pdfmake.min.js"></script>
+    <script src="https://alxproject.virilesoftware.com/lib/data-table/js/vfs_fonts.js"></script>
+    <script src="https://alxproject.virilesoftware.com/lib/data-table/extensions/buttons/js/dataTables.buttons.min.js"></script>
+    <script src="https://alxproject.virilesoftware.com/lib/data-table/extensions/buttons/js/buttons.flash.min.js"></script>
+    <script src="https://alxproject.virilesoftware.com/lib/data-table/extensions/buttons/js/jszip.min.js"></script>
+    <script src="https://alxproject.virilesoftware.com/lib/data-table/extensions/buttons/js/pdfmake.min.js"></script>
+    <script src="https://alxproject.virilesoftware.com/lib/data-table/extensions/buttons/js/vfs_fonts.js"></script>
+    <script src="https://alxproject.virilesoftware.com/lib/data-table/extensions/buttons/js/buttons.colVis.min.js"></script>
+    <script src="https://alxproject.virilesoftware.com/lib/data-table/extensions/buttons/js/pdfmake.min.js"></script>
+    <script src="https://alxproject.virilesoftware.com/lib/datatables.net-buttons/js/buttons.print.min.js"></script>
+    <script src="https://alxproject.virilesoftware.com/lib/datatables.net-buttons/js/buttons.html5.min.js"></script>
+    <script src="https://alxproject.virilesoftware.com/lib/datatables.net-bs4/js/dataTables.bootstrap4.min.js"></script>
+    <script src="https://alxproject.virilesoftware.com/lib/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
+    <script src="https://alxproject.virilesoftware.com/lib/datatables.net-responsive-bs4/js/responsive.bootstrap4.min.js"></script>
+    <script type="text/javascript" src="https://alxproject.virilesoftware.com/dist/js/tabulator.min.js"></script>
+<!-- Custom js -->
+<script type="text/javascript" src="https://alxproject.virilesoftware.com/js/menu_teacher_home.js"></script>
+<script type="text/javascript" src="https://alxproject.virilesoftware.com/js/main.js"></script>
+<script type="text/javascript" src="https://alxproject.virilesoftware.com/lib/select2/js/select2.full.min.js"></script>
+<!-- pcmenu js -->
+<script src="https://alxproject.virilesoftware.com/js/pcoded.min.js"></script>
+<script src="https://alxproject.virilesoftware.com/js/template.js"></script>
+<script src="https://alxproject.virilesoftware.com/js/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="https://alxproject.virilesoftware.com/js/jquery.mousewheel.min.js"></script>
+<script type="text/javascript" src="https://alxproject.virilesoftware.com/js/subjectdetail_teacher.js"></script>
+<script>
+$('.select2-show-search').select2({
+          minimumResultsForSearch: ''
+        });
+</script>
+</body>
+
+
+</html>

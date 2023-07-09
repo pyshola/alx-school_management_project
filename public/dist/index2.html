@@ -1,0 +1,43 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <script src="./pdf-lib.js"></script>
+  </head>
+
+  <body>
+   
+  </body>
+
+  <script>
+    createPdf();
+	
+	async function createPdf() {
+		const pdfDoc = await PDFLib.PDFDocument.create()
+		const timesRomanFont = await pdfDoc.embedFont(PDFLib.StandardFonts.TimesRoman)
+
+		const page = pdfDoc.addPage()
+		const { width, height } = page.getSize()
+		const fontSize = 30
+		page.drawText('Creating PDFs in JavaScript is awesome!', {
+			x: 50,
+			y: height - 4 * fontSize,
+			size: fontSize,
+			font: timesRomanFont,
+			color: PDFLib.rgb(0, 0.53, 0.71),
+		})
+		page.drawText('From Shola, using javascript!', {
+			x: 70,
+			y: height - 4 * fontSize,
+			size: fontSize,
+			font: timesRomanFont,
+			color: PDFLib.rgb(0, 0.53, 0.71),
+		})
+	const pdfDataUri = await pdfDoc.saveAsBase64({ dataUri: true });
+	const link = document.createElement("a");
+	link.href = pdfDataUri;
+	link.download = 'save.pdf';
+	link.click();
+  
+	}
+  </script>
+</html>

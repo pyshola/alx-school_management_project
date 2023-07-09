@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <title><%=school%> - Syntax School Management Software</title>
+    <!-- HTML5 Shim and Respond.js IE9 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+      <![endif]-->
+      <!-- Meta -->
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+      <meta name="description" content="School Management Software">
+        <meta name="author" content="Syntax School Management Software">
+      
+      <!-- Favicon icon -->
+      <link rel="icon" href="https://alxproject.virilesoftware.com/images/favicon.ico" type="image/x-icon">
+      <!-- Google font-->
+      <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
+      <!-- themify icon -->
+      <link rel="stylesheet" type="text/css" href="https://alxproject.virilesoftware.com/icon/themify-icons/themify-icons.css">
+      <!-- ico font -->
+      <!-- ico font -->
+      <link rel="stylesheet" type="text/css" href="https://alxproject.virilesoftware.com/icon/icofont/css/icofont.css">
+      <link href="https://alxproject.virilesoftware.com/lib/font-awesome/css/font-awesome.css" rel="stylesheet">
+    <link href="https://alxproject.virilesoftware.com/lib/Ionicons/css/ionicons.css" rel="stylesheet">
+      <!-- Style.css -->
+      <link rel="stylesheet" type="text/css" href="https://alxproject.virilesoftware.com/lib/bootstrap/dist/css/bootstrap.min.css">
+      <link rel="stylesheet" type="text/css" href="https://alxproject.virilesoftware.com/css/menu.css">
+      <link rel="stylesheet" type="text/css" href="https://alxproject.virilesoftware.com/css/slim.css">
+      
+      <link rel="stylesheet" type="text/css" href="https://alxproject.virilesoftware.com/css/jquery.mCustomScrollbar.css">
+
+  </head>
+
+  <body>
+    <!-- Pre-loader start -->
+    <div class="theme-loader">
+        <div class="ball-scale">
+            <div></div>
+        </div>
+    </div>
+    <!-- Pre-loader end -->
+    <!-- Menu header start -->
+    <div id="pcoded" class="pcoded">
+        <div class="pcoded-overlay-box"></div>
+        <div class="pcoded-container navbar-wrapper">
+
+            <nav class="navbar header-navbar pcoded-header" header-theme="theme4">
+                <div class="navbar-wrapper">
+                    <div class="navbar-logo">
+                        <a class="mobile-menu" id="mobile-collapse" href="#!">
+                            <i class="ti-menu"></i>
+                        </a>
+                        <a class="mobile-search morphsearch-search" href="#">
+                            <i class="ti-search"></i>
+                        </a>
+                        <a href="https://alxproject.virilesoftware.com/eportal">
+                            <img class="img-fluid" src="https://alxproject.virilesoftware.com/images/logo.png" alt="Theme-Logo" />
+                        </a>
+                        <a class="mobile-options">
+                            <i class="ti-more"></i>
+                        </a>
+                    </div>
+                    <div class="navbar-container container-fluid">
+                        <div>
+                            <ul class="nav-left">
+                                <li>
+                                    <div class="sidebar_toggle"><a href="javascript:void(0)"><i class="ti-menu"></i></a></div>
+                                </li>
+                               
+                                <li>
+                                    <a href="#!" onclick="javascript:toggleFullScreen()">
+                                        <i class="ti-fullscreen"></i>
+                                    </a>
+                                </li>
+                                
+                            </ul>
+                            <ul class="nav-right">
+                               
+                                <li class="header-notification d-none">
+                                    <a href="#!">
+                                        <i class="ti-bell"></i>
+                                        <span class="badge">5</span>
+                                    </a>
+                                    <ul class="show-notification">
+                                        <li>
+                                            <h6>Notifications</h6>
+                                            <label class="label label-danger">New</label>
+                                        </li>
+                                        <li>
+                                            <div class="media">
+                                                <img class="d-flex align-self-center" src="https://alxproject.virilesoftware.com/images/user.png" alt="Generic placeholder image">
+                                                <div class="media-body">
+                                                    <h5 class="notification-user">John Doe</h5>
+                                                    <p class="notification-msg">Lorem ipsum dolor sit amet, consectetuer elit.</p>
+                                                    <span class="notification-time">30 minutes ago</span>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="media">
+                                                <img class="d-flex align-self-center" src="https://alxproject.virilesoftware.com/images/user.png" alt="Generic placeholder image">
+                                                <div class="media-body">
+                                                    <h5 class="notification-user">Joseph William</h5>
+                                                    <p class="notification-msg">Lorem ipsum dolor sit amet, consectetuer elit.</p>
+                                                    <span class="notification-time">30 minutes ago</span>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="media">
+                                                <img class="d-flex align-self-center" src="https://alxproject.virilesoftware.com/images/user.png" alt="Generic placeholder image">
+                                                <div class="media-body">
+                                                    <h5 class="notification-user">Sara Soudein</h5>
+                                                    <p class="notification-msg">Lorem ipsum dolor sit amet, consectetuer elit.</p>
+                                                    <span class="notification-time">30 minutes ago</span>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </li>
+                                
+                                <li class="user-profile header-notification">
+                                    <a href="#!">
+                                        <img src="<%=picture%>" alt="User-Profile-Image">
+                                        <span><%=name%></span>
+                                        <i class="ti-angle-down"></i>
+                                    </a>
+                                    <ul class="show-notification profile-notification">
+                                       <li>
+                                            <a href="https://alxproject.virilesoftware.com/eportal">
+                                                <i class="ti-email"></i> My Messages
+                                            </a>
+                                        </li>
+                                        
+                                        <li>
+                                            <a href="#!">
+                                                <i class="ti-layout-sidebar-left"></i> Logout
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                            
+                        </div>
+                    </div>
+                </div>
+            </nav>
+            
+            
+            <div class="pcoded-main-container">
+                <div class="pcoded-wrapper">
+                    <nav class="pcoded-navbar" pcoded-header-position="relative">
+                        <div class="sidebar_toggle"><a href="#"><i class="icon-close icons"></i></a></div>
+                        <div class="pcoded-inner-navbar main-menu">
+                            <div class="">
+                                <div class="main-menu-header">
+                                    <img class="img-40" src="<%=school_picture%>" alt="User-Profile-Image">
+                                    <div class="user-details">
+                                        <span><%=name%></span>
+                                        <span id="more-details"><%=position%></span>
+                                    </div>
+                                </div>
+
+                                <div class="main-menu-content">
+                                    
+                                </div>
+                            </div>
+                            <div class="pcoded-navigatio-lavel" data-i18n="nav.category.forms" menu-title-theme="theme5">NAVIGATION</div>
+                            <ul class="pcoded-item pcoded-left-item" id="side-menu">
+                                
+                            </ul>
+                            
+                            
+                            
+                        </div>
+                    </nav>
+                    <div class="pcoded-content">
+                        <div class="pcoded-inner-content">
+                                <div class="container">
+                                    
+                                    <div class="rows" id="studentpage">
+                                    </div>
+                                    <div class="rows" id="noticepage">
+                                    </div>
+                                    <div class="rows" id="">
+                                        <div class="section-wrapper mg-t-10">
+                                            <div class="table-responsive">
+                                            <table class="table table-bordered"  id="hometabledata">
+                                              <thead class="thead-colored bg-success">
+                                                <tr>
+                                                  <th class="wd-20p">Class</th>
+                                                  <th class="wd-20p">Total</th>
+                                                  <th class="wd-20p">Male</th>
+                                                  <th class="wd-20p">Female</th>
+                                                  <th class="wd-20p">Withdraw</th>
+                                                </tr>
+                                              </thead>
+                                              <tbody id="class_summarypage">
+                                                
+                                              </tbody>
+                                            </table>
+                                          </div>
+                                    </div>
+                                    <div class="rows" id="timetable">
+                                    </div>
+                                    <div class="rows" id="calanderpage">
+                                    </div>
+                                    
+
+                                </div><!-- container -->
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Older IE warning message -->
+    <!--[if lt IE 9]>
+<div class="ie-warning">
+    <h1>Warning!!</h1>
+    <p>You are using an outdated version of Internet Explorer, please upgrade <br/>to any of the following web browsers to access this website.</p>
+    <div class="iew-container">
+        <ul class="iew-download">
+            <li>
+                <a href="http://www.google.com/chrome/">
+                    <img src="https://alxproject.virilesoftware.com/images/browser/chrome.png" alt="Chrome">
+                    <div>Chrome</div>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.mozilla.org/en-US/firefox/new/">
+                    <img src="https://alxproject.virilesoftware.com/images/browser/firefox.png" alt="Firefox">
+                    <div>Firefox</div>
+                </a>
+            </li>
+            <li>
+                <a href="http://www.opera.com">
+                    <img src="https://alxproject.virilesoftware.com/images/browser/opera.png" alt="Opera">
+                    <div>Opera</div>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.apple.com/safari/">
+                    <img src="https://alxproject.virilesoftware.com/images/browser/safari.png" alt="Safari">
+                    <div>Safari</div>
+                </a>
+            </li>
+            <li>
+                <a href="http://windows.microsoft.com/en-us/internet-explorer/download-ie">
+                    <img src="https://alxproject.virilesoftware.com/images/browser/ie.png" alt="">
+                    <div>IE (9 & above)</div>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <p>Sorry for the inconvenience!</p>
+</div>
+<![endif]-->
+<!-- Warning Section Ends -->
+<!-- Required Jqurey -->
+<script type="text/javascript" src="https://alxproject.virilesoftware.com/js/jquery.min.js"></script>
+<script src="https://alxproject.virilesoftware.com/js/jquery-ui.min.js"></script>
+<script type="text/javascript" src="https://alxproject.virilesoftware.com/lib/bootstrap/js/bootstrap.js"></script>
+<script type="text/javascript" src="https://alxproject.virilesoftware.com/lib/tether/dist/js/tether.min.js"></script>
+<!-- jquery slimscroll js -->
+<script type="text/javascript" src="https://alxproject.virilesoftware.com/lib/jquery-slimscroll/jquery.slimscroll.js"></script>
+<!-- modernizr js -->
+<script type="text/javascript" src="https://alxproject.virilesoftware.com/lib/modernizr/modernizr.js"></script>
+<script type="text/javascript" src="https://alxproject.virilesoftware.com/lib/modernizr/feature-detects/css-scrollbars.js"></script>
+<!-- classie js -->
+<script type="text/javascript" src="https://alxproject.virilesoftware.com/lib/classie/classie.js"></script>
+
+<script type="text/javascript" src="https://alxproject.virilesoftware.com/js/jquery.storageapi.js"></script>
+<script type="text/javascript" src="https://alxproject.virilesoftware.com/js/jwt-decode.min.js"></script>
+<script type="text/javascript" src="https://alxproject.virilesoftware.com/js/auth.js"></script>
+
+<!-- Custom js -->
+<script type="text/javascript" src="https://alxproject.virilesoftware.com/js/menu_home.js"></script>
+<script type="text/javascript" src="https://alxproject.virilesoftware.com/js/main.js"></script>
+
+<!-- pcmenu js -->
+<script src="https://alxproject.virilesoftware.com/js/pcoded.min.js"></script>
+<script src="https://alxproject.virilesoftware.com/js/template.js"></script>
+<script src="https://alxproject.virilesoftware.com/js/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="https://alxproject.virilesoftware.com/js/jquery.mousewheel.min.js"></script>
+<script type="text/javascript" src="https://alxproject.virilesoftware.com/js/home.js"></script>
+</body>
+
+
+</html>

@@ -1,0 +1,61 @@
+async function addPageToDoc(doc) {
+	doc.addPage();
+	return doc;
+}
+
+async function removePageToDoc(doc) {
+	const totalPages = doc.getPageCount();
+	doc.removePage(totalPages - 1);
+	return doc;
+}
+
+async function addPage() {
+	pdfDoc = await addPageToDoc(pdfDoc);
+	await saveAndRender(pdfDoc);
+}
+
+async function removePage() {
+	pdfDoc = await removePageToDoc(pdfDoc);
+	await saveAndRender(pdfDoc);
+}
+
+async function addPageToDoc(doc) {
+	const page = doc.addPage();
+	const timesRomanFont = await pdfDoc.embedFont(StandardFonts.TimesRoman);
+	const { width, height } = page.getSize();
+	const fontSize = 30;
+	page.drawText('Adding a page in JavaScript is awesome!', {
+		x: 50,
+		y: height - 4 * fontSize,
+		size: fontSize,
+		font: timesRomanFont,
+		color: rgb(0, 0.53, 0.71),
+	});
+
+	return doc;
+}
+
+const { PDFDocument } = require('pdf-lib');
+const fs = require('fs');
+
+run().catch(err => console.log(err));
+
+async function run() {
+  // Create a new document and add a new page
+  const doc = await PDFDocument.create();
+  const page = doc.addPage();
+
+  // Load the image and store it as a Node.js buffer in memory
+  let img = fs.readFileSync('./logo.png');
+  img = await doc.embedPng(img);
+
+  // Draw the image on the center of the page
+  const { width, height } = img.scale(1);
+  page.drawImage(img, {
+    x: page.getWidth() / 2 - width / 2,
+    y: page.getHeight() / 2 - height / 2
+  });
+
+  // Write the PDF to a file
+  fs.writeFileSync('./test.pdf', await doc.save());
+}

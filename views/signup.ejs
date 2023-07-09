@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <meta name="description" content="School Management Software">
+    <meta name="author" content="Syntax School Management Software">
+
+    <title>Syntax School Management Software</title>
+
+    <!-- vendor css -->
+    <link href="https://alxproject.virilesoftware.com/lib/font-awesome/css/font-awesome.css" rel="stylesheet">
+    <link href="https://alxproject.virilesoftware.com/lib/Ionicons/css/ionicons.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://alxproject.virilesoftware.com/lib/sweetalert/sweetalert.css">
+    <link rel="stylesheet" href="https://alxproject.virilesoftware.com/dist/slim.css">
+
+  </head>
+  <body>
+
+    <div class="signin-wrapper">
+
+      <div class="signin-box signup">
+        <h2 class="slim-logo"><a href="https://alxproject.virilesoftware.com/eportal">Syntaxng<span>.</span></a></h2>
+        <h3 class="signin-title-primary">Get Started!</h3>
+        <h5 class="signin-title-secondary lh-4">Singup for free trial and only takes a minute.</h5>
+        <form class="forms-sample" method="post" id ="registeruser" validate>
+        <div class="row row-xs mg-b-10">
+          <div class="col-sm"><input type="text" class="form-control" name = "school_name" placeholder="School Name" data-rule-required="true" data-msg-required="Please enter school name"></div>
+          </div><!-- row -->
+        <div class="row row-xs mg-b-10">
+          <div class="col-sm"><input type="text" class="form-control" name="firstname" placeholder="Firstname" data-rule-required="true" data-msg-required="Please enter your first name"></div>
+          <div class="col-sm mg-t-10 mg-sm-t-0"><input type="text" class="form-control" name="lastname" placeholder="Lastname" data-rule-required="true" data-msg-required="Please enter your lastname name"></div>
+        </div><!-- row -->
+        <div class="row row-xs mg-b-10">
+          <div class="col-sm"><input type="text" class="form-control" placeholder="School Phone No" name="phone"data-rule-required="true" data-msg-required="Please enter phone"></div>
+          <div class="col-sm"><input type="email" class="form-control" placeholder="School Email" name="school_email"></div>
+        </div><!-- row -->
+        <div class="row row-xs mg-b-10">
+          <div class="col-sm"><input type="email" class="form-control" placeholder="Login Email" name="email"data-rule-required="true" data-msg-required="Please enter email"></div>
+        </div><!-- row -->
+        <div class="row row-xs mg-b-10">
+          <div class="col-sm"><input type="password" class="form-control" placeholder="Password" name="password" id="password"data-rule-required="true" data-msg-required="Please enter new password"></div>
+          <div class="col-sm mg-t-10 mg-sm-t-0"><input type="password" class="form-control" name="confirm_password" placeholder="Confirm Password"
+          data-rule-required="true" data-rule-equalTo = "#password" data-msg-equalTo="Password not match" data-msg-required="Please enter confirm password"></div>
+        </div><!-- row -->
+
+        <button class="btn btn-primary btn-block btn-signin"  id="load-submit" data-loading-text="<i class='fa fa-circle-o-notch fa-spin'></i> Processing">Sign Up</button>
+
+        
+        </form>
+        <p class="mg-t-40 mg-b-0">Already have an account? <a href="https://alxproject.virilesoftware.com/eportal/login">Sign In</a></p>
+      </div><!-- signin-box -->
+
+    </div><!-- signin-wrapper -->
+    <script src="https://alxproject.virilesoftware.com/lib/jquery/js/jquery.js"></script>
+    <script src="https://alxproject.virilesoftware.com/lib/popper.js/js/popper.js"></script>
+    <script src="https://alxproject.virilesoftware.com/lib/bootstrap/js/bootstrap.js"></script>
+    <script type="text/javascript" src="https://alxproject.virilesoftware.com/js/jquery.storageapi.js"></script>
+    <script src="https://alxproject.virilesoftware.com/js/jwt-decode.min.js"></script>
+    <script src="https://alxproject.virilesoftware.com/lib/sweetalert/sweetalert.min.js"></script>
+	<script type="text/javascript" src="https://alxproject.virilesoftware.com/js/auth.js"></script>
+	<script src="https://alxproject.virilesoftware.com/js/jquery.validate.min.js"></script>
+    <script src="https://alxproject.virilesoftware.com/js/signup.js"></script>
+
+  </body>
+
+</html>

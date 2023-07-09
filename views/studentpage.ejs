@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head id="<%=ref_id%>">
+    <title>Students - <%=school%> - Syntax School Management Software</title>
+    <!-- HTML5 Shim and Respond.js IE9 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+      <![endif]-->
+      <!-- Meta -->
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+      <meta name="description" content="School Management Software">
+        <meta name="author" content="Syntax School Management Software">
+      
+      <!-- Favicon icon -->
+      <link rel="icon" href="https://alxproject.virilesoftware.com/images/favicon.ico" type="image/x-icon">
+      <!-- Google font-->
+      <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
+      <!-- themify icon -->
+      <link rel="stylesheet" type="text/css" href="https://alxproject.virilesoftware.com/icon/themify-icons/themify-icons.css">
+      <!-- ico font -->
+      <!-- ico font -->
+      <link rel="stylesheet" type="text/css" href="https://alxproject.virilesoftware.com/icon/icofont/css/icofont.css">
+      <link href="https://alxproject.virilesoftware.com/lib/font-awesome/css/font-awesome.css" rel="stylesheet">
+      <link rel="stylesheet" href="https://alxproject.virilesoftware.com/lib/daterangepicker-master/daterangepicker.css">
+    <link href="https://alxproject.virilesoftware.com/lib/Ionicons/css/ionicons.css" rel="stylesheet">
+    <link href="https://alxproject.virilesoftware.com//lib/SpinKit/css/spinkit.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://alxproject.virilesoftware.com/lib/toastr/build/toastr.min.css">
+    
+    <link rel="stylesheet" href="https://alxproject.virilesoftware.com/lib/datatables.net-bs4/css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" href="https://alxproject.virilesoftware.com/lib/data-table/css/buttons.dataTables.min.css">
+    <link rel="stylesheet" href="https://alxproject.virilesoftware.com/lib/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css">
+    <script type="text/javascript" src="https://alxproject.virilesoftware.com/dist/pdf-lib.js"></script>
+    <script type="text/javascript" src="https://alxproject.virilesoftware.com/dist/fontkit.umd.js"></script>
+      <!-- Style.css -->
+      <link rel="stylesheet" type="text/css" href="https://alxproject.virilesoftware.com/lib/bootstrap/dist/css/bootstrap.min.css">
+      <link rel="stylesheet" type="text/css" href="https://alxproject.virilesoftware.com/css/tabstyle.css">
+      <link rel="stylesheet" type="text/css" href="https://alxproject.virilesoftware.com/css/menu.css">
+      <link href="https://alxproject.virilesoftware.com/css/select2.min.css" rel="stylesheet">
+      <link rel="stylesheet" type="text/css" href="https://alxproject.virilesoftware.com/css/slim.css">
+      
+      <link rel="stylesheet" type="text/css" href="https://alxproject.virilesoftware.com/css/jquery.mCustomScrollbar.css">
+<style>
+@media (min-width: 1198px){
+.container {
+    width: 100%;
+    max-width: 100%;
+}
+}
+.pcoded-content{
+margin-left:10px;
+
+}
+.pcoded[theme-layout="vertical"][vertical-placement="left"][vertical-nav-type="expanded"][vertical-effect="shrink"] .pcoded-content {
+    margin-left: 10px;
+}
+
+</style>
+  </head>
+
+  <body>
+    <!-- Pre-loader start -->
+    <div class="theme-loader">
+        <div class="ball-scale">
+            <div></div>
+        </div>
+    </div>
+    <!-- Pre-loader end -->
+    <!-- Menu header start -->
+    <div id="pcoded" class="pcoded">
+        <div class="pcoded-overlay-box"></div>
+        <div class="pcoded-container navbar-wrapper">
+
+            <nav class="navbar header-navbar pcoded-header" header-theme="theme4">
+                <div class="navbar-wrapper">
+                    <div class="navbar-logo">
+                        
+                        <a href="https://alxproject.virilesoftware.com/eportal">
+                            <img class="img-fluid" src="https://alxproject.virilesoftware.com/images/logo.png" alt="" />
+                        </a>
+                        <a class="mobile-options">
+                            <i class="ti-more"></i>
+                        </a>
+                    </div>
+                    <div class="navbar-container container-fluid">
+                        <div>
+                            
+                            <ul class="nav-right">
+                               
+                                
+                                
+                                <li class="user-profile header-notification">
+                                    <a href="#!">
+                                        <img src="<%=picture%>" alt="User-Profile-Image">
+                                        <span><%=name%></span>
+                                        <i class="ti-angle-down"></i>
+                                    </a>
+                                    <ul class="show-notification profile-notification">
+                                       <li>
+                                            <a href="javascript:;">
+                                                <i class="ti-email"></i> My Messages
+                                            </a>
+                                        </li>
+                                        
+                                        <li>
+                                            <a href="javascript:;" id="user-logout">
+                                                <i class="ti-layout-sidebar-left"></i> Logout
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                            
+                        </div>
+                    </div>
+                </div>
+            </nav>
+
+            
+            
+            <div class="pcoded-main-container">
+                <div class="pcoded-wrapper">
+                    
+                    <div class="pcoded-content">
+                        <div class="pcoded-inner-content">
+                                <div class="container">
+                                <div class="slim-pageheader">
+                                  <ol class="breadcrumb slim-breadcrumb">
+                                  </ol>
+                                  
+                                </div><!-- slim-pageheader -->
+            
+            
+
+                    <div class="row">
+            
+            
+            <div class="col-sm-12 col-lg-9">
+            <div class="card card-profile">
+              <div class="card-body" id="biodata">
+                
+              </div><!-- card-body -->
+              
+              
+            </div><!-- card -->
+            </div>
+            
+            <div class="col-sm-12 col-lg-3">
+            <div class="card card-connection" id="fees_info">
+              <div class="row row-xs">
+                
+              </div><!-- row -->
+              <hr>
+              <div class="row row-xs">
+                
+              </div><!-- row -->
+            </div><!-- card -->
+            </div>
+            
+            </div>
+            
+            <div class="row">
+            <div class="col-sm-12 col-lg-12 mg-t-10">
+            <div class="cd-tabs cd-tabs--vertical container js-cd-tabs" style="padding:0px">
+            <nav class="cd-tabs__navigation">
+      <ul class="cd-tabs__list">
+        <li>
+          <a href="#tab-biodata" class="cd-tabs__item cd-tabs__item--selected">
+           <i class="fa fa-user icon icon--xs"></i><span>Biodata</span>
+          </a>
+        </li>
+
+        <li>
+          <a href="#tab-fees" class="cd-tabs__item">
+            <i class="fa fa-money icon icon--xs"></i>
+            <span>Fees</span>
+          </a>
+        </li>
+        <li>
+          <a href="#tab-guardian" class="cd-tabs__item">
+            <i class="icon ion-ios-people icon--xs"></i><span>Guardian</span>
+          </a>
+        </li>
+        <li>
+          <a href="#tab-notice" class="cd-tabs__item">
+             <i class="fa fa-bell icon icon--xs"></i><span>New Feed</span>
+          </a>
+        </li>
+
+        <li>
+          <a href="#tab-result" class="cd-tabs__item">
+             <i class="fa fa-fax icon icon--xs"></i><span>Results</span>
+          </a>
+        </li>
+
+        <li class="d-none">
+          <a href="#tab-settings" class="cd-tabs__item">
+            <span>Settings</span>
+          </a>
+        </li>
+
+        <li class="d-none">
+          <a href="#tab-trash" class="cd-tabs__item">
+            <span>Trash</span>
+          </a>
+        </li>
+      </ul> <!-- cd-tabs__list -->
+    </nav>
+    
+    <ul class="cd-tabs__panels">
+      <li id="tab-biodata" class="cd-tabs__panel cd-tabs__panel--selected text-component">
+      <div class="row">
+                    <div class="col-lg-12 mg-t-20 mg-lg-t-0">
+                    
+                      <div class="table-responsive">
+                        <table class="table table-bordered mg-b-0 tx-14">
+                          <tbody  id="biodatabody">
+                            <tr>
+                            
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div><!-- table-responsive -->
+                      </div>
+                      </div>
+       </li>
+
+        <li id="tab-fees" class="cd-tabs__panel text-component">
+        <div class="row">
+        <div class="col-sm-12 col-lg-12 mg-t-20">
+                     <h3><span id="bill_class"></span> Bill  </h3>
+                       <div class="card">
+                      <div class="table-responsive">
+                      <table class="table table-bordered">
+                        <thead class="thead-colored bg-primary">
+                          <tr>
+                            <th class="wd-35p">Fees Types</th>
+                            <th class="wd-30p">Amount</th>
+                            
+                          </tr>
+                        </thead>
+                        <tbody id="bill_infos">
+                          
+                        </tbody>
+                      </table>
+                    </div><!-- table-responsive -->
+                    </div>
+                    
+                     </div> 
+        </div>
+      <div class="row">
+      <div class="col-sm-12 col-lg-12 mg-t-20">
+      <h3>Student Bill</h3>
+      </div>
+                    <div class="col-lg-4 mg-t-10 mg-lg-t-0">
+                      <select class="form-control select2-show-search" data-placeholder="Academic Session" id="academic_session_home" style="width:100%">
+                      </select>
+                    </div><!-- col-4 -->
+                    <div class="col-lg-3 mg-t-10 mg-lg-t-0">
+                      <select class="form-control select2" data-placeholder="Term" id="session_term_home" style="width:100%">
+                      <option label="Choose one"></option>
+                        <option value="First Term">First Term</option>
+                        <option value="Second Term">Second Term</option>
+                        <option value="Third Term">Third Term</option>
+                        
+                      </select>
+                    </div><!-- col-4 -->
+                    <div class="col-lg-5 mg-t-10 mg-lg-t-0">
+                      <a href="javascript:void(0)" class="btn btn-outline-warning mg-b-10" id="bill_search_home">View</a>
+                      <a href="https://alxproject.virilesoftware.com/eportal/abudu_roseline/apply_fees" class="btn btn-outline-success mg-b-10 mg-r-10 mg-l-10 d-none">Make Payment</a>
+                    
+                    </div><!-- col-4 -->
+                    </div>
+                    
+                  
+                    <div class="col-sm-12 col-lg-12 mg-t-20">
+                    
+                       <div class="card">
+                      <div class="table-responsive">
+                      <table class="table table-bordered">
+                        <thead class="thead-colored bg-primary">
+                          <tr>
+                            <th class="wd-35p">Fees Types</th>
+                            <th class="wd-30p">Amount</th>
+                            <th class="wd-25p">Weaver</th>
+                            <th class="wd-25p">Fine</th>
+                            <th class="wd-45p">Paid    </th>
+                            <th class="wd-25p">Due</th>
+                          </tr>
+                        </thead>
+                        <tbody id="bill_info">
+                          
+                        </tbody>
+                      </table>
+                    </div><!-- table-responsive -->
+                    </div>
+                    
+                     </div> 
+                     <div class="col-sm-12 col-lg-12 mg-t-20">
+                     <h3>Payment History</h3>
+            <div class="card">
+            <div class="table-responsive">
+            <table class="table table-bordered">
+              <thead class="thead-colored bg-pink">
+                <tr>
+                  <th class="wd-10p">S/N</th>
+                  <th class="wd-30p">Date</th>
+                  <th class="wd-30p">Receipt</th>
+                  <th class="wd-30p">Payment Method</th>
+                  <th class="wd-30p">Amount</th>
+                  <th class="wd-30p">Prev. Payment</th>
+                  <th class="wd-30p">Due</th>
+                  <th class="wd-30p">Paid</th>
+                  <th class="wd-30p">Balance</th>
+                  <th class="wd-30p"></th>
+                  
+                </tr>
+              </thead>
+              <tbody id="billpayment_info">
+                
+              </tbody>
+            </table>
+          </div><!-- table-responsive -->
+          </div>
+        </li>
+        <li id="tab-guardian" class="cd-tabs__panel text-component">
+          <div class="row">
+                        <div class="col-lg-12 mg-t-20 mg-lg-t-0">
+                        
+                          <div class="table-responsive">
+                            <table class="table table-bordered mg-b-0 tx-14">
+                              <tbody  id="guardianbody">
+                                <tr>
+                                
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div><!-- table-responsive -->
+                          </div>
+                          </div>
+           </li>
+
+      <li id="tab-notice" class="cd-tabs__panel text-component">
+      <div class="col-lg-12">
+
+            <div class="card pd-30">
+              <div class="timeline-group" id="newsfeed_panel">
+                
+                
+                
+              </div><!-- timeline-group -->
+            </div><!-- card -->
+
+          </div><!-- col-9 -->
+      </li>
+
+      <li id="tab-result" class="cd-tabs__panel text-component">
+      <div class="row">
+          <div class="col-lg-12 mg-t-20 mg-lg-t-0">
+          
+            <div class="table-responsive">
+              <table class="table table-bordered mg-b-0 tx-14"  id="tabledata">
+              <thead class="thead-colored  bg-success">
+                 <tr>
+                                                                <th>Class</th>
+                                                                <th>Session</th>
+                                                                <th>Term</th>
+                                                                <th>Download Result</th>
+                                                                
+                                                            </tr>
+                                                        </thead>
+                <tbody  id="reportcardbody">
+                  <tr>
+                  
+                  </tr>
+                </tbody>
+              </table>
+            </div><!-- table-responsive -->
+            </div>
+            </div>
+        </li>
+
+      <li id="tab-settings" class="cd-tabs__panel text-component">
+      </li>
+
+      <li id="tab-trash" class="cd-tabs__panel text-component">
+       </li>
+    </ul> <!-- cd-tabs__panels -->
+    
+    
+            </div>
+            </div>
+            </div>
+        
+           
+           
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    
+    
+ 
+    
+    
+<!-- Older IE warning message -->
+    <!--[if lt IE 9]>
+<div class="ie-warning">
+    <h1>Warning!!</h1>
+    <p>You are using an outdated version of Internet Explorer, please upgrade <br/>to any of the following web browsers to access this website.</p>
+    <div class="iew-container">
+        <ul class="iew-download">
+            <li>
+                <a href="http://www.google.com/chrome/">
+                    <img src="https://alxproject.virilesoftware.com/images/browser/chrome.png" alt="Chrome">
+                    <div>Chrome</div>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.mozilla.org/en-US/firefox/new/">
+                    <img src="https://alxproject.virilesoftware.com/images/browser/firefox.png" alt="Firefox">
+                    <div>Firefox</div>
+                </a>
+            </li>
+            <li>
+                <a href="http://www.opera.com">
+                    <img src="https://alxproject.virilesoftware.com/images/browser/opera.png" alt="Opera">
+                    <div>Opera</div>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.apple.com/safari/">
+                    <img src="https://alxproject.virilesoftware.com/images/browser/safari.png" alt="Safari">
+                    <div>Safari</div>
+                </a>
+            </li>
+            <li>
+                <a href="http://windows.microsoft.com/en-us/internet-explorer/download-ie">
+                    <img src="https://alxproject.virilesoftware.com/images/browser/ie.png" alt="">
+                    <div>IE (9 & above)</div>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <p>Sorry for the inconvenience!</p>
+</div>
+<![endif]-->
+<!-- Warning Section Ends -->
+<!-- Required Jqurey -->
+<script type="text/javascript" src="https://alxproject.virilesoftware.com/js/jquery.min.js"></script>
+<script src="https://alxproject.virilesoftware.com/js/jquery-ui.min.js"></script>
+<script type="text/javascript" src="https://alxproject.virilesoftware.com/lib/bootstrap/js/bootstrap.js"></script>
+<script type="text/javascript" src="https://alxproject.virilesoftware.com/lib/tether/dist/js/tether.min.js"></script>
+<script type="text/javascript" src="https://alxproject.virilesoftware.com/lib/bootstrap/dist/js/bootstrap.min.js"></script>
+<!-- jquery slimscroll js -->
+<script type="text/javascript" src="https://alxproject.virilesoftware.com/lib/jquery-slimscroll/jquery.slimscroll.js"></script>
+<!-- modernizr js -->
+<script type="text/javascript" src="https://alxproject.virilesoftware.com/lib/modernizr/modernizr.js"></script>
+<script type="text/javascript" src="https://alxproject.virilesoftware.com/lib/modernizr/feature-detects/css-scrollbars.js"></script>
+<!-- classie js -->
+<script type="text/javascript" src="https://alxproject.virilesoftware.com/lib/classie/classie.js"></script>
+
+<script type="text/javascript" src="https://alxproject.virilesoftware.com/js/jquery.storageapi.js"></script>
+<script type="text/javascript" src="https://alxproject.virilesoftware.com/js/jwt-decode.min.js"></script>
+<script type="text/javascript" src="https://alxproject.virilesoftware.com/js/auth.js"></script>
+<script src="https://alxproject.virilesoftware.com/js/jquery.validate.min.js"></script>
+<script type="text/javascript" src="https://alxproject.virilesoftware.com/lib/form-validation/validate.js"></script>
+    <script src="https://alxproject.virilesoftware.com/lib/sweetalert/sweetalert.min.js"></script>
+    
+<!-- Custom js -->
+<script src="https://alxproject.virilesoftware.com/js/jquery.inputmask.min.js"></script>
+<script src="https://alxproject.virilesoftware.com/js/inputmask.js"></script>
+<script type="text/javascript" src="https://alxproject.virilesoftware.com/js/main.js"></script>
+<script src="https://alxproject.virilesoftware.com/lib/toastr/build/toastr.min.js"></script>
+<!-- pcmenu js -->
+<script type="text/javascript" src="https://alxproject.virilesoftware.com/lib/select2/js/select2.full.min.js"></script>
+<script type="text/javascript" src="https://alxproject.virilesoftware.com/js/math.min.js"></script>
+<script type="text/javascript" src="https://alxproject.virilesoftware.com/lib/moment/moment.min.js"></script>
+<script src="https://alxproject.virilesoftware.com/js/pcoded.min.js"></script>
+<script src="https://alxproject.virilesoftware.com/js/template.js"></script>
+<script src="https://alxproject.virilesoftware.com/js/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="https://alxproject.virilesoftware.com/js/jquery.mousewheel.min.js"></script>
+<script src="https://alxproject.virilesoftware.com/lib/jspdf/dist/html2canvas.js"></script>
+<script src="https://alxproject.virilesoftware.com/js/util.js"></script>
+<script src="https://alxproject.virilesoftware.com/js/tabmain.js"></script>
+<script src='https://alxproject.virilesoftware.com/lib/jspdf/dist/jspdf.umd.min.js'></script>
+<script src='https://alxproject.virilesoftware.com/lib/jspdf/dist/polyfills.umd.js'></script>
+<script type="text/javascript" src="https://alxproject.virilesoftware.com/result/studentpage.js"></script>
+
+<script>
+     $('.select2').select2({
+          minimumResultsForSearch: Infinity
+        });
+    $('[data-toggle="tooltip-success"]').tooltip({
+			  template: '<div class="tooltip tooltip-success" role="tooltip"><div class="arrow"></div><div class="tooltip-inner"></div></div>'
+			});
+        // Select2 by showing the search
+        $('.select2-show-search').select2({
+          minimumResultsForSearch: ''
+        });
+    </script>
+</body>
+
+
+</html>

@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <title>Fees Registrar - <%=school%> - Syntax School Management Software</title>
+    <!-- HTML5 Shim and Respond.js IE9 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+      <![endif]-->
+      <!-- Meta -->
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+      <meta name="description" content="School Management Software">
+        <meta name="author" content="Syntax School Management Software">
+      
+      <!-- Favicon icon -->
+      <link rel="icon" href="https://alxproject.virilesoftware.com/images/favicon.ico" type="image/x-icon">
+      <!-- Google font-->
+      <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
+      <!-- themify icon -->
+      <link rel="stylesheet" type="text/css" href="https://alxproject.virilesoftware.com/icon/themify-icons/themify-icons.css">
+      <!-- ico font -->
+      <!-- ico font -->
+      <link rel="stylesheet" type="text/css" href="https://alxproject.virilesoftware.com/icon/icofont/css/icofont.css">
+      <link href="https://alxproject.virilesoftware.com/lib/font-awesome/css/font-awesome.css" rel="stylesheet">
+      <link rel="stylesheet" href="https://alxproject.virilesoftware.com/lib/daterangepicker-master/daterangepicker.css">
+    <link href="https://alxproject.virilesoftware.com/lib/Ionicons/css/ionicons.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://alxproject.virilesoftware.com/lib/toastr/build/toastr.min.css">
+    
+    <link rel="stylesheet" href="https://alxproject.virilesoftware.com/lib/datatables.net-bs4/css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" href="https://alxproject.virilesoftware.com/lib/data-table/css/buttons.dataTables.min.css">
+    <link rel="stylesheet" href="https://alxproject.virilesoftware.com/lib/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css">
+    
+      <!-- Style.css -->
+      <link rel="stylesheet" type="text/css" href="https://alxproject.virilesoftware.com/lib/bootstrap/dist/css/bootstrap.min.css">
+      <link rel="stylesheet" type="text/css" href="https://alxproject.virilesoftware.com/css/menu.css">
+      <link href="https://alxproject.virilesoftware.com/css/select2.min.css" rel="stylesheet">
+      <link rel="stylesheet" type="text/css" href="https://alxproject.virilesoftware.com/css/slim.css">
+      
+      <link rel="stylesheet" type="text/css" href="https://alxproject.virilesoftware.com/css/jquery.mCustomScrollbar.css">
+
+  </head>
+
+  <body>
+    <!-- Pre-loader start -->
+    <div class="theme-loader">
+        <div class="ball-scale">
+            <div></div>
+        </div>
+    </div>
+    <!-- Pre-loader end -->
+    <!-- Menu header start -->
+    <div id="pcoded" class="pcoded">
+        <div class="pcoded-overlay-box"></div>
+        <div class="pcoded-container navbar-wrapper">
+
+            <nav class="navbar header-navbar pcoded-header" header-theme="theme4">
+                <div class="navbar-wrapper">
+                    <div class="navbar-logo">
+                        <a class="mobile-menu" id="mobile-collapse" href="#!">
+                            <i class="ti-menu"></i>
+                        </a>
+                        <a class="mobile-search morphsearch-search" href="#">
+                            <i class="ti-search"></i>
+                        </a>
+                        <a href="https://alxproject.virilesoftware.com/eportal">
+                            <img class="img-fluid" src="https://alxproject.virilesoftware.com/images/logo.png" alt="Theme-Logo" />
+                        </a>
+                        <a class="mobile-options">
+                            <i class="ti-more"></i>
+                        </a>
+                    </div>
+                    <div class="navbar-container container-fluid">
+                        <div>
+                            <ul class="nav-left">
+                                <li>
+                                    <div class="sidebar_toggle"><a href="javascript:void(0)"><i class="ti-menu"></i></a></div>
+                                </li>
+                               
+                                <li>
+                                    <a href="#!" onclick="javascript:toggleFullScreen()">
+                                        <i class="ti-fullscreen"></i>
+                                    </a>
+                                </li>
+                                
+                            </ul>
+                            <ul class="nav-right">
+                               
+                                <li class="header-notification d-none">
+                                    <a href="#!">
+                                        <i class="ti-bell"></i>
+                                        <span class="badge">5</span>
+                                    </a>
+                                    <ul class="show-notification">
+                                        <li>
+                                            <h6>Notifications</h6>
+                                            <label class="label label-danger">New</label>
+                                        </li>
+                                        <li>
+                                            <div class="media">
+                                                <img class="d-flex align-self-center" src="https://alxproject.virilesoftware.com/images/user.png" alt="Generic placeholder image">
+                                                <div class="media-body">
+                                                    <h5 class="notification-user">John Doe</h5>
+                                                    <p class="notification-msg">Lorem ipsum dolor sit amet, consectetuer elit.</p>
+                                                    <span class="notification-time">30 minutes ago</span>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="media">
+                                                <img class="d-flex align-self-center" src="https://alxproject.virilesoftware.com/images/user.png" alt="Generic placeholder image">
+                                                <div class="media-body">
+                                                    <h5 class="notification-user">Joseph William</h5>
+                                                    <p class="notification-msg">Lorem ipsum dolor sit amet, consectetuer elit.</p>
+                                                    <span class="notification-time">30 minutes ago</span>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="media">
+                                                <img class="d-flex align-self-center" src="https://alxproject.virilesoftware.com/images/user.png" alt="Generic placeholder image">
+                                                <div class="media-body">
+                                                    <h5 class="notification-user">Sara Soudein</h5>
+                                                    <p class="notification-msg">Lorem ipsum dolor sit amet, consectetuer elit.</p>
+                                                    <span class="notification-time">30 minutes ago</span>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </li>
+                                
+                                <li class="user-profile header-notification">
+                                    <a href="#!">
+                                        <img src="<%=picture%>" alt="User-Profile-Image">
+                                        <span><%=name%></span>
+                                        <i class="ti-angle-down"></i>
+                                    </a>
+                                    <ul class="show-notification profile-notification">
+                                       <li>
+                                            <a href="https://alxproject.virilesoftware.com/eportal">
+                                                <i class="ti-email"></i> My Messages
+                                            </a>
+                                        </li>
+                                        
+                                        <li>
+                                            <a href="#!">
+                                                <i class="ti-layout-sidebar-left"></i> Logout
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                            
+                        </div>
+                    </div>
+                </div>
+            </nav>
+
+            
+            
+            <div class="pcoded-main-container">
+                <div class="pcoded-wrapper">
+                    <nav class="pcoded-navbar" pcoded-header-position="relative">
+                        <div class="sidebar_toggle"><a href="#"><i class="icon-close icons"></i></a></div>
+                        <div class="pcoded-inner-navbar main-menu">
+                            <div class="">
+                                <div class="main-menu-header">
+                                    <img class="img-40" src="<%=school_picture%>" alt="User-Profile-Image">
+                                    <div class="user-details">
+                                        <span><%=name%></span>
+                                        <span id="more-details"><%=position%></span>
+                                    </div>
+                                </div>
+
+                                <div class="main-menu-content">
+                                    
+                                </div>
+                            </div>
+                            <ul class="pcoded-item pcoded-left-item" id="side-menu">
+                                
+                            </ul>
+                            
+                            
+                            
+                        </div>
+                    </nav>
+                    <div class="pcoded-content">
+                        <div class="pcoded-inner-content">
+                                <div class="container">
+                                <div class="slim-pageheader">
+                                  <ol class="breadcrumb slim-breadcrumb">
+                                    <li class="breadcrumb-item"><a href="#">Finance</a></li>
+                                    <li class="breadcrumb-item active" aria-current="page">Fees Registrar</li>
+                                  </ol>
+                                  <h6 class="slim-pagetitle">Fees Registrar</h6>
+                                </div><!-- slim-pageheader -->
+            
+            <div class="section-wrapper">
+            <div class="row">
+            <div class="col-lg-3 mg-t-10 mg-lg-t-0">
+              <select class="form-control select2-show-search" data-placeholder="Fees Type" id="fees_type">
+              <option label="Choose one"></option>
+                <option value="Any">Any</option>
+              </select>
+            </div><!-- col-4 -->
+            <div class="col-lg-3 mg-t-10 mg-lg-t-0">
+              <select class="form-control select2-show-search" data-placeholder="Academic Session" id="academic_session">
+              <option label="Choose one"></option>
+              <option value="Any">Any</option>
+              </select>
+            </div><!-- col-4 -->
+            <div class="col-lg-3 mg-t-10 mg-lg-t-0">
+              <select class="form-control select2" data-placeholder="Term" id="session_term">
+              <option label="Choose one"></option>
+                <option value="Any">Any</option>
+                <option value="First Term">First Term</option>
+                <option value="Second Term">Second Term</option>
+                <option value="Third Term">Third Term</option>
+                
+              </select>
+            </div><!-- col-4 -->
+            <div class="col-lg-3 mg-t-10 mg-lg-t-0">
+              <select class="form-control select2" data-placeholder="Class" id="student_class">
+              <option label="Choose one"></option>
+            <option value="Any">Any</option>
+              </select>
+            </div><!-- col-4 -->
+            <div class="col-lg-3 mg-t-10">
+              <a href="javascript:void(0)" class="btn btn-success active mg-b-10" id="filter_search">View</a>
+              <a href="javascript:void(0)" class="btn btn-primary active mg-b-10" id="add_session">Add Fees</a>
+            </div><!-- col-4 -->
+            
+            
+            
+           
+              <div class="row col-12 mg-t-50 d-none" id="sessionformpanel">
+              <div class="form-layout form-layout-7" style="width: 100%;">
+              <form method="post" id ="sessionform" validate>
+              
+            <div class="row no-gutters">
+              <div class="col-5 col-sm-4">
+                Fees Type:
+              </div><!-- col-4 -->
+              <div class="col-7 col-sm-8">
+                 <select class="form-control select2-show-search" data-placeholder="Select Fees Type" id="fees_type_form"  style="width: 100%;"  data-rule-required="true">
+                    
+                </select>
+              </div><!-- col-8 -->
+            </div><!-- row -->
+            <div class="row no-gutters">
+              <div class="col-5 col-sm-4">
+                Academic Session:
+              </div><!-- col-4 -->
+              <div class="col-7 col-sm-8">
+                <select class="form-control select2-show-search" data-placeholder="Select academic session" id="academic_session_form"  style="width: 100%;"  data-rule-required="true">
+              </select>
+              </div><!-- col-8 -->
+            </div><!-- row -->
+            <div class="row no-gutters">
+              <div class="col-5 col-sm-4">
+                Term:
+              </div><!-- col-4 -->
+              <div class="col-7 col-sm-8">
+                <select class="form-control select2" data-placeholder="Term" id="session_term_form" style="width: 100%;" data-rule-required="true">
+             
+                <option value="First Term">First Term</option>
+                <option value="Second Term">Second Term</option>
+                <option value="Third Term">Third Term</option>
+                
+              </select>
+              </div><!-- col-8 -->
+            </div><!-- row -->
+            
+            <div class="row no-gutters">
+              <div class="col-5 col-sm-4">
+                Student Class:
+              </div><!-- col-4 -->
+              <div class="col-7 col-sm-8">
+                 <select class="form-control select2-show-search" data-placeholder="Student Class" id="student_class_form"  style="width: 100%;"  data-rule-required="true"  multiple>
+                    
+                </select>
+              </div><!-- col-8 -->
+            </div><!-- row -->
+            
+            
+            
+            <div class="row no-gutters">
+              <div class="col-5 col-sm-4">
+                Amount:
+              </div><!-- col-4 -->
+              <div class="col-7 col-sm-8">
+                <input type="text" class="form-control " placeholder="" name="amount" id="amount" data-inputmask="'alias': 'currency'" data-rule-required="true"><span class="messages"></span>
+              </div><!-- col-8 -->
+            </div><!-- row -->
+          
+                  <div class="mg-t-20">
+            <button type="submit" class="btn btn-primary"  id="load-submit">Add Fees</button>
+            <a class="btn btn btn-success disabled d-none" href="javascript:;" id="processing-btn"> Processing</a>
+            <button type="button" class="btn btn-secondary" id="cancel_session_form">Cancel</button>
+          </div>  
+                    
+                    
+                  
+                  
+                  </form>
+                  </div>
+                  </div><!-- form-layout -->
+            </div><!-- section-wrapper -->
+            </div>
+            <div class="section-wrapper mg-t-20">
+            
+          
+            
+          <div class="row">
+          <div class="col-lg-12 mg-t-20 mg-lg-t-0">
+          
+            <div class="table-responsive">
+              <table class="table table-bordered mg-b-0 tx-14"  id="tabledata">
+              <thead class="thead-colored  bg-success">
+                 <tr>
+                                                                <th>Fees Type</th>
+                                                                <th>Academic Session</th>
+                                                                <th>Term</th>
+                                                                <th>Student Class</th>
+                                                                <th>Amount</th>
+                                                                <th></th>
+                                                            </tr>
+                                                        </thead>
+                <tbody  id="tablebody">
+                  <tr></tr>
+                </tbody>
+              </table>
+            </div><!-- table-responsive -->
+            </div>
+            
+            
+                                </div><!-- container -->
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    <div id="updateclassarm_modal" class="modal fade">
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content bd-0 tx-14">
+          <div class="modal-header">
+            <h6 class="tx-14 mg-b-0 tx-uppercase tx-inverse tx-bold">Update Fees</h6>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          
+          <div class="modal-body pd-25">
+          <form class="forms-sample" method="post" id ="updateschoolclassform" validate>
+          <div class="row no-gutters">
+          <div class="col-12 mg-t-20 mg--t-10">
+              <select class="form-control select2-show-search" data-placeholder="Fees Type" style="width:100%;" id="edit_fees_type_form">
+                
+              </select>
+        </div><!-- col-4 -->
+        <div class="col-12 mg-t-20 mg-t-10">
+              <select class="form-control select2-show-search" data-placeholder="Session" style="width:100%;" id="edit_academic_session_form">
+                
+              </select>
+        </div><!-- col-4 -->
+        <div class="col-12 mg-t-20 mg-t-10">
+              <select class="form-control select2" data-placeholder="Term" id="edit_session_term_form" style="width: 100%;" data-rule-required="true">
+             
+                <option value="First Term">First Term</option>
+                <option value="Second Term">Second Term</option>
+                <option value="Third Term">Third Term</option>
+                
+              </select>
+        </div><!-- col-4 -->
+        <div class="col-12 mg-t-20 mg-t-10">
+              <select class="form-control select2-show-search" data-placeholder="Class" style="width:100%;" id="edit_student_class_form">
+                
+              </select>
+        </div><!-- col-4 -->
+          <div class="col-12 mg-t-10">
+            <input type="text" class="form-control" placeholder="Enter Amount" name="edit_amount" id="edit_amount"  data-inputmask="'alias': 'currency'" data-rule-required="true">
+            <span class="messages"></span>
+          </div><!-- form-group -->
+        </div>
+         
+          
+          <div class="modal-footer">
+            <button type="submit" class="btn btn-primary"  id="edit_load-submit">Save</button>
+            <a class="btn btn btn-success disabled d-none" href="javascript:;" id="edit_processing-btn"> Processing</a>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+          </div>
+          </form>
+        </div>
+        
+         </div>
+      </div><!-- modal-dialog -->
+    </div><!-- modal -->
+    
+    
+<!-- Older IE warning message -->
+    <!--[if lt IE 9]>
+<div class="ie-warning">
+    <h1>Warning!!</h1>
+    <p>You are using an outdated version of Internet Explorer, please upgrade <br/>to any of the following web browsers to access this website.</p>
+    <div class="iew-container">
+        <ul class="iew-download">
+            <li>
+                <a href="http://www.google.com/chrome/">
+                    <img src="https://alxproject.virilesoftware.com/images/browser/chrome.png" alt="Chrome">
+                    <div>Chrome</div>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.mozilla.org/en-US/firefox/new/">
+                    <img src="https://alxproject.virilesoftware.com/images/browser/firefox.png" alt="Firefox">
+                    <div>Firefox</div>
+                </a>
+            </li>
+            <li>
+                <a href="http://www.opera.com">
+                    <img src="https://alxproject.virilesoftware.com/images/browser/opera.png" alt="Opera">
+                    <div>Opera</div>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.apple.com/safari/">
+                    <img src="https://alxproject.virilesoftware.com/images/browser/safari.png" alt="Safari">
+                    <div>Safari</div>
+                </a>
+            </li>
+            <li>
+                <a href="http://windows.microsoft.com/en-us/internet-explorer/download-ie">
+                    <img src="https://alxproject.virilesoftware.com/images/browser/ie.png" alt="">
+                    <div>IE (9 & above)</div>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <p>Sorry for the inconvenience!</p>
+</div>
+<![endif]-->
+<!-- Warning Section Ends -->
+<!-- Required Jqurey -->
+<script type="text/javascript" src="https://alxproject.virilesoftware.com/js/jquery.min.js"></script>
+<script src="https://alxproject.virilesoftware.com/js/jquery-ui.min.js"></script>
+<script type="text/javascript" src="https://alxproject.virilesoftware.com/lib/bootstrap/js/bootstrap.js"></script>
+<script type="text/javascript" src="https://alxproject.virilesoftware.com/lib/tether/dist/js/tether.min.js"></script>
+<script type="text/javascript" src="https://alxproject.virilesoftware.com/lib/bootstrap/dist/js/bootstrap.min.js"></script>
+<!-- jquery slimscroll js -->
+<script type="text/javascript" src="https://alxproject.virilesoftware.com/lib/jquery-slimscroll/jquery.slimscroll.js"></script>
+<!-- modernizr js -->
+<script type="text/javascript" src="https://alxproject.virilesoftware.com/lib/modernizr/modernizr.js"></script>
+<script type="text/javascript" src="https://alxproject.virilesoftware.com/lib/modernizr/feature-detects/css-scrollbars.js"></script>
+<!-- classie js -->
+<script type="text/javascript" src="https://alxproject.virilesoftware.com/lib/classie/classie.js"></script>
+
+<script type="text/javascript" src="https://alxproject.virilesoftware.com/js/jquery.storageapi.js"></script>
+<script type="text/javascript" src="https://alxproject.virilesoftware.com/js/jwt-decode.min.js"></script>
+<script type="text/javascript" src="https://alxproject.virilesoftware.com/js/auth.js"></script>
+<script src="https://alxproject.virilesoftware.com/js/jquery.validate.min.js"></script>
+<script type="text/javascript" src="https://alxproject.virilesoftware.com/lib/form-validation/validate.js"></script>
+    <script src="https://alxproject.virilesoftware.com/lib/sweetalert/sweetalert.min.js"></script>
+    <script src="https://alxproject.virilesoftware.com/lib/datatables.net/js/jquery.dataTables.min.js"></script>
+	<script src="https://alxproject.virilesoftware.com/lib/datatables.net-bs4/dataTables.bootstrap4.js"></script>
+    <script src="https://alxproject.virilesoftware.com/lib/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
+    <script src="https://alxproject.virilesoftware.com/lib/data-table/js/jszip.min.js"></script>
+    <script src="https://alxproject.virilesoftware.com/lib/data-table/js/pdfmake.min.js"></script>
+    <script src="https://alxproject.virilesoftware.com/lib/data-table/js/vfs_fonts.js"></script>
+    <script src="https://alxproject.virilesoftware.com/lib/data-table/extensions/buttons/js/dataTables.buttons.min.js"></script>
+    <script src="https://alxproject.virilesoftware.com/lib/data-table/extensions/buttons/js/buttons.flash.min.js"></script>
+    <script src="https://alxproject.virilesoftware.com/lib/data-table/extensions/buttons/js/jszip.min.js"></script>
+    <script src="https://alxproject.virilesoftware.com/lib/data-table/extensions/buttons/js/pdfmake.min.js"></script>
+    <script src="https://alxproject.virilesoftware.com/lib/data-table/extensions/buttons/js/vfs_fonts.js"></script>
+    <script src="https://alxproject.virilesoftware.com/lib/data-table/extensions/buttons/js/buttons.colVis.min.js"></script>
+    <script src="https://alxproject.virilesoftware.com/lib/data-table/extensions/buttons/js/pdfmake.min.js"></script>
+    <script src="https://alxproject.virilesoftware.com/lib/datatables.net-buttons/js/buttons.print.min.js"></script>
+    <script src="https://alxproject.virilesoftware.com/lib/datatables.net-buttons/js/buttons.html5.min.js"></script>
+    <script src="https://alxproject.virilesoftware.com/lib/datatables.net-bs4/js/dataTables.bootstrap4.min.js"></script>
+    <script src="https://alxproject.virilesoftware.com/lib/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
+    <script src="https://alxproject.virilesoftware.com/lib/datatables.net-responsive-bs4/js/responsive.bootstrap4.min.js"></script>
+<!-- Custom js -->
+<script src="https://alxproject.virilesoftware.com/js/jquery.inputmask.min.js"></script>
+<script src="https://alxproject.virilesoftware.com/js/inputmask.js"></script>
+<script type="text/javascript" src="https://alxproject.virilesoftware.com/js/menu_finance.js"></script>
+<script type="text/javascript" src="https://alxproject.virilesoftware.com/js/main.js"></script>
+<script type="text/javascript" src="https://alxproject.virilesoftware.com/lib/select2/js/select2.full.min.js"></script>
+<script src="https://alxproject.virilesoftware.com/lib/moment/moment.min.js"></script>
+<script src="https://alxproject.virilesoftware.com/lib/daterangepicker-master/daterangepicker.js"></script>
+<script src="https://alxproject.virilesoftware.com/lib/toastr/build/toastr.min.js"></script>
+<!-- pcmenu js -->
+<script src="https://alxproject.virilesoftware.com/js/pcoded.min.js"></script>
+<script src="https://alxproject.virilesoftware.com/js/template.js"></script>
+<script src="https://alxproject.virilesoftware.com/js/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="https://alxproject.virilesoftware.com/js/jquery.mousewheel.min.js"></script>
+<script type="text/javascript" src="https://alxproject.virilesoftware.com/js/fees_registrar.js"></script>
+
+<script>
+     $('.select2').select2({
+          minimumResultsForSearch: Infinity
+        });
+
+        // Select2 by showing the search
+        $('.select2-show-search').select2({
+          minimumResultsForSearch: ''
+        });
+    </script>
+</body>
+
+
+</html>
