@@ -3,7 +3,7 @@ var LocalStrategy    = require('passport-local').Strategy;
 var jwt = require('jsonwebtoken');
 var Sequelize = require("sequelize");
 var model = require("../models/schooldb");
-var sequelize = new Sequelize("postgres://virilesoftware:shollybay123@A@127.0.0.1:5432/virilesoftware_alxproject",{logging: false});
+var sequelize = new Sequelize("postgres://root:123456@127.0.0.1:5432/alxproject",{logging: false});
 
 var bcrypt = require('bcryptjs');
 var User = model.User_table(sequelize);

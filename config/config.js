@@ -2,19 +2,7 @@ var Sequelize = require("sequelize");
 var exports = module.exports = {};	
 var model = require("../models/schooldb");
 
-var sequelize = new Sequelize("postgres://virilesoftware:shollybay123@A@127.0.0.1:5432/virilesoftware_alxproject",{dialectOptions: {connectTimeout: 100000},
-logging: false, pool:{max: 30,  idle: 30000,  acquire: 100000},
-retry: { match: [
-    /SequelizeConnectionError/,
-    /SequelizeConnectionRefusedError/,
-    /SequelizeHostNotFoundError/,
-    /SequelizeHostNotReachableError/,
-    /SequelizeInvalidConnectionError/,
-    /SequelizeConnectionTimedOutError/
-  ],
-  timeout: 100000,
-  max: Infinity
-}});
+var sequelize = new Sequelize("postgres://root:123456@127.0.0.1:5432/alxproject",{logging: false});
 
 exports.db = sequelize
 exports.School = model.School_table(sequelize);
