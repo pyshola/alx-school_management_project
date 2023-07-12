@@ -8,11 +8,15 @@ School Management Software is school record automation and student information s
 
 ### Technology
 
-HTML, CSS, JQUERY, BOOTSTRAP.
+HTML
+CSS
 Javascript
+JQUERY
+BOOTSTRAP
 Nodejs
 Express
 Postgresql
+jsPDF
 
 
 
