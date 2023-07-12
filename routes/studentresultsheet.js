@@ -18,6 +18,8 @@ const {
 	Op
 } = require("sequelize");
 
+
+//convert position e.g 1 - 1st, 2 - 2nd...
 function positionstatus(index){
     if(parseInt(index) == 1){
         return 'st'
@@ -34,6 +36,8 @@ function positionstatus(index){
     }
 }
 
+
+//Student grading
 function scoregrade(score){
     if(parseFloat(score) <= 39.4){
         return 'F9'
@@ -64,6 +68,7 @@ function scoregrade(score){
     }
 }
 
+//school rating
 var rating_one = [{title:'0-39(VERY POOR)',min:0, max:39.4, description:'VERY POOR'},
 {title: '40-44(POOR)', min:39.5, max:44.4, description:'POOR'},
 {title: '45-49(FAIR)', min:44.5, max:49.5, description:'FAIR'},
@@ -81,7 +86,7 @@ var rating_two = [{title:'0-39(FAIL)',min:0, max:39.4, description:'FAIL'},
 {title:'74 & ABOVE(DISTINCTION)',min:74.5, max:100, description:'DISTINCTION'}]
 
 
-
+//function to get school 
 function getRatings(score, rating){
     rating.sort(emc.GetSortOrder('min'))
     if(isNaN(parseFloat(score))){
@@ -103,30 +108,41 @@ function getRatings(score, rating){
 
 var exports = module.exports = {};
 
+//generate student result
 exports.getstudentresult = async function (req, res) {
+    //decode emcrypted information
     var school_id = parseInt(emc.decrypt(req.payload.school))
     var _id = parseInt(emc.decrypt(req.payload._id))
-    console.log(req.query)
+    //console.log(req.query)
     
     
     var studentname = ''
     var gender = ''
 
+    //get school information
     var sch = await connect.School.findOne({where:{id:school_id}})
     
 
+    //get academic session
     var student_info = await connect.AcademicSession.findOne({where:{id:req.params.ref_id, school_id:school_id}})
 	var class_category = ''
     var subject = []
+
+    
     if(student_info){
         
-
+        //get class arm
         var sch_class = await connect.ClassArm.findOne({where: {id:student_info.class_arm_id }});
+        //get session information
         var session = await connect.Session.findOne({where: {school_id:school_id, id:student_info.session_id}});
+        
+        //get student class
         var schclass = await connect.SchoolClass.findOne({where:{id:sch_class.school_class_id}})
 
         var report_infos = await connect.ReportCard.findOne({where: {session_id:student_info.session_id,
             term:req.query.term,class_arm_id:sch_class.id}});
+
+        //get reportcard information
         if(!report_infos){
             var report_info_date = ''
         }
@@ -135,6 +151,7 @@ exports.getstudentresult = async function (req, res) {
         }
 
 
+        //get result setup info
         var so = await connect.ResultSetup.findOne({where:{session_id:session.id, school_id:school_id, school_class_id:sch_class.school_class_id}})
         if(!so){
             var rating = rating_one
